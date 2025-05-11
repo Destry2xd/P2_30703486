@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+
+body {
+ 
+  background-image:url(Minimalista.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        color: rgb(255, 255, 255);
+        height: 100vh;
+    }
+
+
+header {
+  background-image: linear-gradient(to right,#000000, #004293);
+  text-align: center;
+  padding: 20px 0;
+
+  border-radius: 30px;
+}
+
+@font-face{
+  
+	font-family:'Gamer';
+	src:url('/fuentes/Ray.ttf');}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav {
+  background-image: linear-gradient(to right,#000000, #004293);
+  color: rgb(32, 29, 29);
+  text-align: center;
+  font-family:'Gamer';
+	src:url('/fuentes/Ray.ttf');
+  border-radius: 30px;
+  font:40px 'Gamer';
+
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+
+}
+
+.products {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product {
+  text-align: center;
+  margin: 20px;
+}
+
+.product img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+footer {
+  background-image: linear-gradient(to right,#000000, #004293);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px 0;
+}
+
+p{
+  font: 10;
+}
+
+#ani {
+  /**/
+
+  color: rgb(0, 0, 0);
+  font:20px 'Gamer';
+  width: 20%;
+
+  border-radius: 10px;
+  transition: all 1s;
+   
+	font-family:'Gamer';
+	src:url('/fuentes/Ray.ttf');
+  
+           
+
+
+
+}
+
+#ani:hover {
+  background: rgba(72, 173, 255, 0.725);
+  box-shadow: rgb(0, 0, 0)5px 14px 25px;
+
+}
+
+@media (max-width:400px) {
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right,#000000, #004293);
+    font-family: 'Courgette', cursive;
+  }
+
+  .product img {
+    border-radius: 40px;
+    width: 10px;
+  }
+
+
+}
