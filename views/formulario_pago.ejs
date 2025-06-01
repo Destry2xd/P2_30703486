@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/formulario_pago.css'/>
+</head>
+
+<body class="body">
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="card card-custom">
+
+          <div class="card-header card-header-custom text-center py-4">
+            <h3 class="mb-0">formulario de Pago</h3>
+          </div>
+
+          <div class="card-body p-4">
+
+              <div id="error-message" class="error-message d-none text-danger text-center" role="alert">
+                Por favor, completa todos los campos requeridos.
+              </div>
+
+              <div id="success-message" class="success-message d-none text-success text-center" role="alert">
+                Pago realizado con éxito.
+              </div>
+
+              <form id="payment-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label">Numero de tarjeta</label>
+                    <input type="text" class="form-control" id="card-number" placeholder="numero de tarjeta" required>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="CVC" class="form-label">CVC</label>
+                    <input type="text" class="form-control" id="CVC" placeholder="CVC" required>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="amount" class="form-label">Monto</label>
+                    <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-dollar-sing"></i></span>
+                    <input type="number" class="form-control" id="amount" placeholder="Monto a Pagar" required>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="first-name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="first-name" placeholder="nombre" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="last-name" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="last-name" placeholder="Apellido" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="city" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="email" placeholder="Ciudad" required>
+                  </div>
+
+                  <div class="cold-md-3">
+                    <label for="state" class="form-label">Estado</label>
+                    <select class="form-select" id="state" required>
+                      <option value="" selected disabled>Selecciona un estado</option>
+                      <option value="California">California</option>
+                      <option value="Texas">Texas</option>
+                      <option value="Florida">Florida</option>
+                      <option value="New York">New York</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="postal-code" class="form-label">Código Postal</label>
+                    <input type="text" class="form-control" id="zip" placeholder="Código Postal" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" placeholder="correo" required>
+                  </div>
+
+                  <div class="cold-md-3">
+                    <label for="expYear" class="form-label">Año de vencimiento</label>
+                    <select class="form-select" id="expYear" required>
+                      <option value="" selected disabled>año de vencimiento</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                      <option value="2025">2030</option>
+                      <option value="2026">2031</option>
+                      <option value="2027">2032</option>
+                      <option value="2028">2033</option>
+                      <option value="2025">2034</option>
+                      <option value="2026">2035</option>
+                    </select>
+                  </div>
+
+                  <div class="cold-md-3">
+                    <label for="expmonth" class="form-label">Mes de vencimiento</label>
+                    <select class="form-select" id="expYear" required>
+                      <option value="" selected disabled>mes de vencimiento</option>
+                      <option value="enero">enero</option>
+                      <option value="febrero">febrero</option>
+                      <option value="marzo">marzo</option>
+                      <option value="abril">abril</option>
+                      <option value="mayo">mayo</option>
+                      <option value="junio">junio</option>
+                      <option value="julio">julio</option>
+                      <option value="agosto">agosto</option>
+                      <option value="septiembre">septiembre</option>
+                      <option value="octubre">octubre</option>
+                      <option value="noviembre">noviembre</option>
+                      <option value="diciembre">diciembre</option>
+                    </select>
+                  </div>
+
+                  <div class="cold-md-3">
+                    <label for="coin" class="form-label">moneda</label>
+                    <select class="form-select" id="expYear" required>
+                      <option value="" selected disabled>Moneda</option>
+                      <option value="EUR">EUR</option>
+                      <option value="USD">USD</option>
+                      <option value="VES">VES</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <p class="form-label">metodos de pagos:</p>
+                    <div class="d-flex flex-wrap gab-2">
+                    <button type="button" class="btn btn-outline-secondary"><i class="fab fa-cc-visa"></i></button>
+                    <button type="button" class="btn btn-outline-secondary"><i class="fab fa-cc-mastercard"></i></button>
+                    <button type="button" class="btn btn-outline-secondary"><i class="fab fa-cc-amex"></i></button>
+                    <button type="button" class="btn btn-outline-secondary"><i class="fab fa-cc-paypal"></i></button>
+                   </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="notes" class="form-label">Notas adicionales</label>
+                    <textarea class="form-control" id="notes" rows="3" placeholder="escribe aqui..."></textarea>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end gap-2 mt-4">
+                  <a href="/precios"><button type="reset" class="btn btn-secondary">cancelar</button></a>
+                  <a href="/exito"><button type="submit" class="btn btn-custom">Pagar</button></a>
+                </div>
+            </form> 
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+             
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
