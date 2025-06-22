@@ -1,0 +1,115 @@
+*¨{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 100%;
+    vertical-align: Baseline;
+}
+
+.body {
+    text-align: Center ;
+    font-family: Sans-Serif;
+    padding: 0%;
+    margin: 0%;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgb(0, 15, 89) 100%);
+    flex-direction: column;
+}
+
+.Head {
+    display: Flex;
+    align-items: Center;
+    justify-content: Space-between;
+    height: 65px;
+    background: #000000;
+    position: fixed;
+    width: 100%;
+    z-index: 100px ;
+}
+
+.Navbar {
+    display: Flex;
+    margin-right: 15px;
+}
+
+.Logo {
+    margin-left: 30px;
+}
+
+.Logo a {
+    text-decoration: None;
+    color: #fff;
+    text-transform: Uppercase;
+    font-size: 20px;
+}
+
+.Navbar a {
+    display: Block;
+    padding: 25px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.Navbar a:hover {
+    background: #5a5959;
+}
+
+.Content_header {
+    display: Flex;
+    justify-content: Center;
+    align-items: Center;
+    text-align: center;
+    font-size: 20px;
+}
+
+.Title {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    font-size:50px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: #101010;
+}
+
+.P {
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: #fff;
+    padding:0 100px ;
+}
+
+.P{
+    text-shadow: 1px 1px 0px black, 
+    -1px -1px 0px black,
+    1px -1px 0px black, 
+    -1px 1px 0px black;
+}
+
+.Carousel {
+    overflow: hidden;
+    width: 1500px;
+}
+
+.Warp {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 250px;
+    justify-items: stretch;
+    animation: slide 15s linear infinite;
+    margin-top: 10px;
+}
+ 
+.Warp img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    to {
+        translate: calc(-4 * 250px);
+    }
+}
