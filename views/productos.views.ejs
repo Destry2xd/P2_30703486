@@ -1,0 +1,21 @@
+<section id="servicios" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Nuestros Servicios</h2>
+      <p class="text-muted">Soluciones integrales para tus necesidades de climatización</p>
+    </div>
+
+    <div class="row">
+      <% servicios.forEach(servicio => { %>
+        <div class="col-md-4">
+          <div class="service-card text-center p-4">
+            <h4><%= servicio.titulo %></h4>
+            <p><%= servicio.descripcion %></p>
+            <p><%= servicio.precio %> $</p>
+            <a href="/pago/<%= servicio.id %>" class="btn btn-outline-primary">Solicitar</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+<section class="py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">Formulario de Pago - <%= servicio.titulo %></h2>
+    
+    <form method="POST" action="/pago/realizado">
+      <input type="hidden" name="servicio" value="<%= servicio.titulo %>">
+
+      <div class="mb-3">
+        <label>Correo electrónico</label>
+        <input type="email" class="form-control" name="correo" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Nombre del titular de la tarjeta</label>
+        <input type="text" class="form-control" name="titular" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Fecha de expiración</label>
+        <div class="d-flex gap-2">
+          <select class="form-select" name="mes" required>
+            <option value="">Mes</option>
+            <% for(let m = 1; m <= 12; m++) { %>
+              <option value="<%= m %>"><%= m %></option>
+            <% } %>
+          </select>
+          <select class="form-select" name="anio" required>
+            <option value="">Año</option>
+            <% for(let y = new Date().getFullYear(); y <= new Date().getFullYear() + 10; y++) { %>
+              <option value="<%= y %>"><%= y %></option>
+            <% } %>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Código de seguridad (CVV/CVC)</label>
+        <input type="text" class="form-control" name="cvv" maxlength="4" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Moneda</label>
+        <select class="form-select" name="moneda" required>
+          <option value="">Seleccionar moneda</option>
+          <option value="USD">Dólares (USD)</option>
+          <option value="EUR">Euros (EUR)</option>
+          <option value="VES">Bolivares (VES)</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Pagar</button>
+    </form>
+  </div>
+</section>
