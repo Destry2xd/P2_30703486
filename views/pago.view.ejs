@@ -1,0 +1,67 @@
+<section class="py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">Formulario de Pago - <%= servicio.titulo %></h2>
+    
+    <form method="POST" action="/pago/<%= servicio.id %>">
+      <input type="hidden" name="servicio" value="<%= servicio.titulo %>">
+
+      <div class="mb-3">
+        <label>Nombre del comprador</label>
+        <input type="text" class="form-control" name="nombre" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Correo electrónico</label>
+        <input type="email" class="form-control" name="correo" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Nombre del titular de la tarjeta</label>
+        <input type="text" class="form-control" name="titular" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Número de tarjeta</label>
+        <input type="text" class="form-control" name="tarjeta" maxlength="19" required>
+        <small class="text-muted">Aceptado: 4111111111111111, 5555555555554444, 378282246310005, etc.</small>
+      </div>
+
+      <div class="mb-3">
+        <label>Fecha de expiración</label>
+        <div class="d-flex gap-2">
+          <select class="form-select" name="mes" required>
+            <option value="">Mes</option>
+            <% for(let m = 1; m <= 12; m++) { %>
+              <option value="<%= m %>"><%= m %></option>
+            <% } %>
+          </select>
+          <select class="form-select" name="anio" required>
+            <option value="">Año</option>
+            <% for(let y = new Date().getFullYear(); y <= new Date().getFullYear() + 10; y++) { %>
+              <option value="<%= y %>"><%= y %></option>
+            <% } %>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Código de seguridad (CVV/CVC)</label>
+        <input type="text" class="form-control" name="cvv" maxlength="4" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Moneda</label>
+        <select class="form-select" name="moneda" required>
+          <option value="">Seleccionar moneda</option>
+          <option value="USD">Dólares (USD)</option>
+          <option value="EUR">Euros (EUR)</option>
+          <option value="VES">Bolívares (VES)</option>
+        </select>
+      </div>
+
+      <div class="g-recaptcha mb-3" data-sitekey="6Ldq8HYrAAAAAJvh4IxQC2A76inHKxVo--IdFeX7"></div>
+
+      <button type="submit" class="btn btn-primary w-100">Pagar</button>
+    </form>
+  </div>
+</section>
